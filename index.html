@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сергей Шостиков — QA Engineer</title>
+<meta name="description" content="Sergey Shostikov — QA Engineer / Automation QA Engineer. Python, Pytest, Playwright, Apache JMeter, REST API.">
+<meta property="og:title" content="Sergey Shostikov — QA Engineer">
+<meta property="og:description" content="QA Engineer / Automation QA Engineer: Python, Pytest, Playwright, JMeter.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b1020">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐞</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1020;--panel:#121932;--line:#252e52;--text:#e8ecf7;--mute:#98a2c3;--acc:#ffb454;--ok:#4fe3a1;--bad:#ff6b7a;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:400 17px/1.6 Onest,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:5;background:rgba(11,16,32,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+nav{display:flex;gap:22px;font-size:15px}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--text)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px}
+.lang button{background:none;border:0;color:var(--mute);font:500 13px Onest;padding:4px 12px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--acc);color:#1a1200}
+.logo{font:600 15px Unbounded;text-decoration:none}
+section{padding:80px 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+h2{font:500 clamp(24px,4vw,32px)/1.2 Unbounded;margin-bottom:36px}
+.hero{padding:64px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.me{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.me img{width:76px;height:76px;border-radius:50%;object-fit:cover;filter:grayscale(1);border:2px solid var(--line)}
+.me span{color:var(--mute);font-size:15px}
+h1{font:600 clamp(34px,5.4vw,56px)/1.08 Unbounded;letter-spacing:-.02em}
+.lead{margin:22px 0 30px;color:var(--mute);max-width:46ch;font-size:18px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:500;border:1px solid var(--line);transition:border-color .2s,background .2s}
+.btn:hover{border-color:var(--acc)}
+.btn.p{background:var(--acc);border-color:var(--acc);color:#1a1200}
+.btn.p:hover{background:#ffc47a}
+.term{background:#080c19;border:1px solid var(--line);border-radius:14px;font:400 13.5px/1.7 'JetBrains Mono',monospace;overflow:hidden}
+.term .bar{display:flex;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--line);color:var(--mute);font-size:12px}
+.term pre{padding:16px;min-height:290px;white-space:pre-wrap;overflow-x:auto}
+.ok{color:var(--ok)}.bad{color:var(--bad)}.mu{color:var(--mute)}
+.cur::after{content:"▍";color:var(--acc);animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+.stats{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:44px;color:var(--mute);font-size:15px}
+.stats b{color:var(--text);font-weight:600}
+.job{display:grid;grid-template-columns:200px 1fr;gap:12px 32px;padding:28px 0;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0;padding-top:0}
+.when{color:var(--mute);font-size:15px}
+.job h3{font:600 20px/1.3 Onest}
+.job .meta{color:var(--mute);font-size:15px;margin-bottom:12px}
+details{border:1px solid var(--line);border-radius:10px;margin-top:8px;background:var(--panel)}
+summary{cursor:pointer;padding:10px 16px;font-weight:500;font-size:15px;list-style:none;display:flex;justify-content:space-between}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--acc);font-size:20px;line-height:1}
+details[open] summary::after{content:"−"}
+details ul{padding:0 16px 14px 36px;color:var(--mute);font-size:15.5px}
+details li{margin-top:4px}
+.skills{display:grid;gap:22px}
+.sk{display:grid;grid-template-columns:200px 1fr;gap:8px 32px;align-items:start}
+.sk h3{font:500 15px Onest;color:var(--mute);padding-top:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{border:1px solid var(--line);background:var(--panel);padding:5px 13px;border-radius:8px;font-size:15px}
+.chips span.k{border-color:var(--acc)}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+.about p{color:var(--mute);margin-bottom:14px}
+.about dl{display:grid;gap:18px}
+.about dt{font-weight:600}.about dd{color:var(--mute);font-size:15.5px}
+.contact p{color:var(--mute);margin-bottom:24px;max-width:50ch}
+.links{display:grid;gap:10px;font-size:19px}
+.links a{text-decoration:none;border-bottom:1px solid var(--line);padding:10px 0;display:flex;justify-content:space-between;gap:16px}
+.links a:hover{border-color:var(--acc)}.links small{color:var(--mute);font-size:14px;align-self:center}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media(max-width:820px){
+ .hero .wrap,.about{grid-template-columns:1fr}
+ .job,.sk{grid-template-columns:1fr}
+ nav{display:none}
+ section{padding:56px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cur::after{animation:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <a class="logo" href="#top">S. Shostikov</a>
+ <nav aria-label="Main"><a href="#top" data-i="n1"></a><a href="#experience" data-i="n2"></a><a href="#skills" data-i="n3"></a><a href="#about" data-i="n4"></a><a href="#contact" data-i="n5"></a></nav>
+ <div class="lang" role="group" aria-label="Language"><button data-l="ru">RU</button><button data-l="en">EN</button></div>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+ <div>
+  <div class="me"><img src="assets/img/photo.jpg" alt="Sergey Shostikov" onerror="this.remove()"><span data-i="where"></span></div>
+  <h1 data-i="h1"></h1>
+  <p class="lead" data-i="lead"></p>
+  <div class="btns">
+   <a class="btn p" href="#contact" data-i="b1"></a>
+   <a class="btn" href="assets/files/Shostikov_Sergey_Resume.pdf" target="_blank" rel="noopener" data-i="b2"></a>
+  </div>
+ </div>
+ <div class="term" aria-hidden="true">
+  <div class="bar"><span>pytest</span><span data-i="demo"></span></div>
+  <pre id="run" class="cur"></pre>
+ </div>
+</div>
+<div class="wrap"><div class="stats" id="stats"></div></div>
+</section>
+
+<section id="experience"><div class="wrap">
+ <h2 data-i="n2"></h2><div id="jobs"></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+ <h2 data-i="n3"></h2><div class="skills" id="sk"></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+ <h2 data-i="n4"></h2>
+ <div class="about"><div id="ab"></div><dl id="edu"></dl></div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+ <h2 data-i="n5"></h2>
+ <p data-i="cp"></p>
+ <div class="links">
+  <a href="mailto:sergeishostikov@gmail.com"><span>sergeishostikov@gmail.com</span><small data-i="mail"></small></a>
+  <a href="tel:+77075994832"><span>+7 (707) 599-48-32</span><small data-i="phone"></small></a>
+  <a href="assets/files/Shostikov_Sergey_Resume.pdf" target="_blank" rel="noopener"><span data-i="b2"></span><small>PDF</small></a>
+ </div>
+</div></section>
+</main>
+<footer><div class="wrap">© <span id="y"></span> Sergey Shostikov</div></footer>
+
+<script>
+const D={
+ru:{n1:"Главная",n2:"Опыт",n3:"Навыки",n4:"Обо мне",n5:"Контакты",
+where:"Астана, Казахстан · удалённо",
+h1:"QA Engineer / Automation QA",
+lead:"Тестирую Web и Mobile, автоматизирую API и UI на Python, Pytest и Playwright, проверяю нагрузку в Apache JMeter.",
+b1:"Написать мне",b2:"Скачать резюме",demo:"пример вывода",
+st:[["7+ лет","в IT"],["4+ года","в тестировании"],["Web · Android · iOS","платформы"],["RU — родной, EN — B1","языки"]],
+cp:"Открыт к полной и частичной занятости и проектной работе. Формат — удалённо, готов к командировкам.",
+mail:"почта",phone:"телефон"},
+en:{n1:"Home",n2:"Experience",n3:"Skills",n4:"About",n5:"Contact",
+where:"Astana, Kazakhstan · remote",
+h1:"QA Engineer / Automation QA",
+lead:"I test Web and Mobile, automate API and UI with Python, Pytest and Playwright, and run load tests in Apache JMeter.",
+b1:"Get in touch",b2:"Download résumé",demo:"sample output",
+st:[["7+ years","in IT"],["4+ years","in testing"],["Web · Android · iOS","platforms"],["RU native, EN B1","languages"]],
+cp:"Open to full-time, part-time and project work. Remote format, available for business trips.",
+mail:"email",phone:"phone"}};
+
+const JOBS=[
+{p:{ru:"Авг 2022 — Сент 2026 · 4 г. 2 мес.",en:"Aug 2022 — Sep 2026 · 4 yrs 2 mos"},
+ c:"VILED, ТОО",r:{ru:"QA Engineer",en:"QA Engineer"},
+ m:{ru:"Алматы · розничная сеть (ювелирные изделия)",en:"Almaty · retail chain (jewelry)"},
+ g:[
+ [{ru:"Автоматизация тестирования",en:"Test automation"},{ru:["Автотесты на Python и Pytest","API-автотесты для REST API: разработка и поддержка","UI-автоматизация веб-приложений на Playwright","Автоматические Telegram-алерты о результатах тестов и состоянии систем"],en:["Automated tests with Python and Pytest","REST API autotests: development and maintenance","Web UI automation with Playwright","Automated Telegram alerts on test results and system status"]}],
+ [{ru:"Нагрузочное тестирование",en:"Load testing"},{ru:["Нагрузка на Web-приложения и REST API в Apache JMeter","Сценарии для проверки производительности и стабильности","Анализ времени отклика, throughput, ошибок и неуспешных запросов","Поиск узких мест, анализ логов, повторные тесты после исправлений"],en:["Load tests of web apps and REST APIs in Apache JMeter","Scenarios for performance and stability checks","Analysis of response time, throughput, errors and failed requests","Bottleneck search, log analysis, retests after fixes"]}],
+ [{ru:"Функциональное тестирование",en:"Functional testing"},{ru:["Приёмочное и регрессионное тестирование","Web, Mobile Web, Android, iOS, кроссбраузерное тестирование","API-тестирование и проверка интеграций между сервисами","Участие в тестировании безопасности"],en:["Acceptance and regression testing","Web, Mobile Web, Android, iOS and cross-browser testing","API testing and integration checks between services","Participation in security testing"]}],
+ [{ru:"Анализ, документация, процессы",en:"Analysis, documentation, process"},{ru:["Анализ требований: неоднозначности и риски","Test Cases по Acceptance Criteria","Bug Reports: шаги, фактический и ожидаемый результат","Анализ логов для локализации причин дефектов","Инструкции и техническая документация","Декомпозиция продуктовых и технических задач","Контроль качества от требований до релиза"],en:["Requirements analysis: ambiguities and risks","Test Cases based on Acceptance Criteria","Bug Reports: steps, actual and expected result","Log analysis to locate defect causes","User guides and technical documentation","Decomposition of product and technical tasks","Quality control from requirements to release"]}]]},
+{p:{ru:"Апр 2023 — Июн 2023 · 3 мес.",en:"Apr 2023 — Jun 2023 · 3 mos"},
+ c:{ru:"ЧУ «Центр информационных технологий и сервиса NIS»",en:"NIS Center of Information Technologies and Services"},r:{ru:"TeamLead QA",en:"TeamLead QA"},
+ m:{ru:"Астана · IT, системная интеграция",en:"Astana · IT, system integration"},
+ g:[[{ru:"Что делал",en:"What I did"},{ru:["Внедрил процессы тестирования на проекте с нуля","Test Plan и Test Strategy","Подходы и методология тестирования на разных этапах разработки","Внедрение и развитие автоматизации тестирования","QA-артефакты и требования к их ведению","Структура QA-команды, роли и зоны ответственности","Требования к тестовой инфраструктуре и инструментам","Entry/Exit Criteria и критерии готовности к тестированию и релизу","Обучение и наставничество участников команды"],en:["Built testing processes on the project from scratch","Test Plan and Test Strategy","Testing approaches and methodology across development stages","Introduced and grew test automation","QA artifacts and rules for maintaining them","QA team structure, roles and responsibilities","Requirements for test infrastructure and tools","Entry/Exit Criteria and readiness criteria for testing and release","Training and mentoring of team members"]}]]},
+{p:{ru:"Дек 2021 — Июл 2022 · 8 мес.",en:"Dec 2021 — Jul 2022 · 8 mos"},
+ c:"NOVARDIS",r:{ru:"Middle tester",en:"Middle tester"},
+ m:{ru:"IT, системная интеграция",en:"IT, system integration"},
+ g:[[{ru:"Что делал",en:"What I did"},{ru:["Нагрузочное, приёмочное, регрессионное и end-to-end тестирование","Web, Mobile Web, Android, iOS, кроссбраузерное тестирование","Тестирование API (мобильное приложение, синхронизация заказов)","Тестирование синхронизации данных, тестирование и выполнение миграции данных","Технический анализ User Stories, Test Cases по критериям принятия","Bug Reports, анализ логов, пользовательские инструкции","Участие в сдаче функционала спринта","Работа с командами заказчика и других подрядчиков, таск-трекеры","SAP Hybris: B2C/B2B Accelerator, ImpEx, HAC, Backoffice"],en:["Load, acceptance, regression and end-to-end testing","Web, Mobile Web, Android, iOS and cross-browser testing","API testing (mobile app, order synchronization)","Data sync testing, data migration testing and execution","Technical analysis of User Stories, Test Cases from acceptance criteria","Bug Reports, log analysis, user guides","Participation in sprint demos","Work with internal team and other contractors, task trackers","SAP Hybris: B2C/B2B Accelerator, ImpEx, HAC, Backoffice"]}]]},
+{p:{ru:"Июн 2019 — Дек 2021 · 2 г. 7 мес.",en:"Jun 2019 — Dec 2021 · 2 yrs 7 mos"},
+ c:"JSC “ArcelorMittal Temirtau”",r:{ru:"Software Engineer",en:"Software Engineer"},m:{ru:"Разработка, БД, тестирование",en:"Development, databases, testing"},
+ g:[[{ru:"Что делал",en:"What I did"},{ru:["Разработка и внедрение ПО для внутренних нужд компании","Поддержка пользователей и сопровождение систем","Проектирование и оптимизация структуры баз данных","Аудит информационной безопасности","Отчёты и дашборды в Power BI","Системное и функциональное тестирование, Test Cases и Bug Reports","Работа с разработчиками над устранением дефектов"],en:["Development and rollout of internal software","User support and system maintenance","Database design and optimization","Information security audit","Reports and dashboards in Power BI","System and functional testing, Test Cases and Bug Reports","Work with developers to fix defects"]}]]}];
+
+const SK=[
+[{ru:"Автоматизация",en:"Automation"},["Python","Pytest","Playwright","REST API","Postman"],1],
+[{ru:"Нагрузка",en:"Load testing"},["Apache JMeter"],1],
+[{ru:"Тестирование",en:"Testing"},["Test Case","Bug Reports","Black box","Web / Mobile / Cross-browser","Acceptance","Regression"]],
+[{ru:"Инструменты",en:"Tools"},["Atlassian Jira","Atlassian Confluence","SAP Hybris"]],
+[{ru:"Данные и платформы",en:"Data and platforms"},["PostgreSQL","Oracle Forms","Java","Linux"]],
+[{ru:"Личные качества",en:"Soft skills"},{ru:["Работа в команде","Решение проблем","Публичные выступления"],en:["Teamwork","Problem-solving","Public speaking"]}]];
+
+const AB={
+ru:["QA Engineer с опытом в тестировании Web и Mobile-приложений. Автоматизирую API- и UI-тесты на Python, Pytest и Playwright, провожу нагрузочное тестирование в Apache JMeter.","Выстраивал QA-процессы с нуля: Test Plan и Test Strategy, Entry/Exit Criteria, роли и зоны ответственности QA-команды.","Ориентирован на качество продукта, техническое развитие и постоянное улучшение процессов тестирования."],
+en:["QA Engineer experienced in testing Web and Mobile applications. I automate API and UI tests with Python, Pytest and Playwright and run load tests in Apache JMeter.","I have built QA processes from scratch: Test Plan and Test Strategy, Entry/Exit Criteria, roles and responsibilities of a QA team.","I care about product quality, technical growth and continuous improvement of testing processes."]};
+const ED={
+ru:[["Бакалавр, Computer Science","KSIU, 2019"],["Software testing","Epam, 2020"],["IT Essentials","Cisco, 2017"],["Языки","Русский — родной, английский — B1"]],
+en:[["Bachelor, Computer Science","KSIU, 2019"],["Software testing","Epam, 2020"],["IT Essentials","Cisco, 2017"],["Languages","Russian — native, English — B1"]]};
+
+const RUN=[
+["mu","$ pytest tests/ -v"],
+["mu","collected 6 items"],
+["","tests/api/test_orders.py::test_create <ok>PASSED</ok>"],
+["","tests/api/test_orders.py::test_auth <ok>PASSED</ok>"],
+["","tests/ui/test_catalog.py::test_filter <ok>PASSED</ok>"],
+["","tests/ui/test_checkout.py::test_cart <ok>PASSED</ok>"],
+["","tests/ui/test_checkout.py::test_pay <bad>FAILED</bad>"],
+["","tests/api/test_orders.py::test_status <ok>PASSED</ok>"],
+["mu","→ Bug Report: steps / actual / expected"],
+["","<ok>5 passed</ok>, <bad>1 failed</bad> → telegram alert sent"]];
+
+let lang="ru",timer;
+const $=s=>document.querySelector(s),t=o=>typeof o==="string"?o:o[lang];
+const esc=s=>s.replace(/</g,"&lt;");
+
+function typeRun(){
+ const el=$("#run");clearTimeout(timer);
+ const html=RUN.map(([c,l])=>`<span class="${c}">${l.replace(/<ok>(.*?)<\/ok>/g,'<span class="ok">$1</span>').replace(/<bad>(.*?)<\/bad>/g,'<span class="bad">$1</span>')}</span>`);
+ if(matchMedia("(prefers-reduced-motion:reduce)").matches){el.innerHTML=html.join("\n");el.classList.remove("cur");return}
+ let i=0;el.classList.add("cur");el.innerHTML="";
+ (function step(){if(i<html.length){el.innerHTML=html.slice(0,++i).join("\n");timer=setTimeout(step,i<3?500:650)}else el.classList.remove("cur")})();
+}
+
+function render(){
+ document.documentElement.lang=lang;
+ document.title=lang==="ru"?"Сергей Шостиков — QA Engineer":"Sergey Shostikov — QA Engineer";
+ document.querySelectorAll("[data-i]").forEach(e=>e.textContent=D[lang][e.dataset.i]);
+ document.querySelectorAll("[data-l]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===lang));
+ $("#stats").innerHTML=D[lang].st.map(([a,b])=>`<span><b>${a}</b> ${b}</span>`).join("");
+ $("#jobs").innerHTML=JOBS.map((j,n)=>`<article class="job"><div class="when">${t(j.p)}</div><div><h3>${t(j.r)} — ${esc(t(j.c))}</h3><p class="meta">${t(j.m)}</p>${j.g.map(([h,l],k)=>`<details${n===0&&k===0?" open":""}><summary>${t(h)}</summary><ul>${l[lang].map(x=>`<li>${esc(x)}</li>`).join("")}</ul></details>`).join("")}</div></article>`).join("");
+ $("#sk").innerHTML=SK.map(([h,l,key])=>`<div class="sk"><h3>${t(h)}</h3><div class="chips">${(Array.isArray(l)?l:l[lang]).map(x=>`<span${key?' class="k"':""}>${x}</span>`).join("")}</div></div>`).join("");
+ $("#ab").innerHTML=AB[lang].map(p=>`<p>${p}</p>`).join("");
+ $("#edu").innerHTML=ED[lang].map(([a,b])=>`<div><dt>${a}</dt><dd>${b}</dd></div>`).join("");
+}
+function set(l,run){lang=l;try{localStorage.setItem("lang",l)}catch(e){}render();if(run)typeRun()}
+document.querySelectorAll("[data-l]").forEach(b=>b.onclick=()=>set(b.dataset.l,false));
+let saved=null;try{saved=localStorage.getItem("lang")}catch(e){}
+lang=saved||((navigator.language||"ru").toLowerCase().startsWith("ru")?"ru":"en");
+$("#y").textContent=new Date().getFullYear();
+render();typeRun();
+</script>
+</body>
+</html>
